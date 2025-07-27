@@ -9,8 +9,12 @@ body {
     color: #D9D9D9;
     padding: 20px;
     height: 100vh;
+
+}
+main{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -47,7 +51,17 @@ section.lose-background {
     border-radius: 4px;
     margin-block: 30px;
 }
-
+section.game-status{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 60px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    
+}
 section.game-status > p {
     margin: 5px;
 }
@@ -66,8 +80,25 @@ section.language-chips {
 }
 
 span.chip {
-    border-radius: 3px;
-    padding: 4.5px;
+position: relative;
+display: inline-block;
+padding: 5px 10px;
+border-radius: 4px;
+font-weight: bold;
+font-size: 0.9rem;
+}
+span.chip.lost::before {
+  content: '💀';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  font-size: 0.85rem;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 section.words{
     display: flex;
@@ -94,7 +125,11 @@ section.alpha-btn{
   width: 35px;
   color: black;
 }
-
+.button:disabled{
+    background-color: #ddd;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
 .correct {
   background-color: #10A95B !important;
   color: white;
@@ -115,4 +150,8 @@ button.new-game {
     display: block;
     margin-inline: auto;
     cursor: pointer;
+}
+.maxcount{
+    margin-bottom: 0;
+    margin-top: 0;
 }
